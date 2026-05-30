@@ -1,0 +1,530 @@
+:root {
+  --gold: #ffd700;
+  --black: #0e0e0e;
+  --white: #ffffff;
+  --transition: all 0.4s ease;
+  --shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+/* =======================
+   Base Styling
+======================= */
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* =======================
+   Product Detail Layout
+======================= */
+.product-detail-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 60px 100px;
+  flex-wrap: wrap;
+}
+
+/* =======================
+   Image Section
+======================= */
+.image-section {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.thumb-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumb {
+  width: 80px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  filter: brightness(0.85);
+}
+.thumb:hover,
+.thumb.active {
+  border-color: var(--gold);
+  box-shadow: 0 0 12px var(--gold);
+  filter: brightness(1);
+  transform: scale(1.05);
+}
+
+.main-image-box {
+  width: 500px;
+  height: 550px;
+  border: 1.5px solid var(--gold);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  animation: gold-glow 4s infinite alternate;
+}
+.main-image {
+  width: 100%;
+  height: 130%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+@keyframes gold-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+  }
+}
+
+/* =======================
+   Info Section
+======================= */
+.info-section {
+  max-width: 420px;
+}
+.product-category {
+  color: var(--gold);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+
+.product-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 8px 0 12px;
+  background: linear-gradient(90deg, var(--gold), #fff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer {
+  0% {
+    background-position: -200px;
+  }
+  100% {
+    background-position: 200px;
+  }
+}
+
+.product-price {
+  color: var(--white);
+  font-size: 1.2rem;
+}
+.product-price span {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+/* =======================
+   Size Selector
+======================= */
+.size-section {
+  margin-top: 25px;
+}
+.size-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.size-btn {
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+.size-btn:hover,
+.size-btn.selected {
+  background: var(--gold);
+  color: var(--black);
+  box-shadow: var(--shadow);
+}
+
+/* =======================
+   Quantity Section
+======================= */
+.quantity-section {
+  margin-top: 20px;
+}
+.qty-box {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+.qty-box button {
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+}
+.qty-box button:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+.qty-box input {
+  width: 55px;
+  text-align: center;
+  border: 1px solid #444;
+  margin: 0 8px;
+  border-radius: 4px;
+  background: var(--black);
+  color: var(--white);
+}
+
+/* =======================
+   Buttons
+======================= */
+.button-group {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.add-cart-btn,
+.buy-now-btn {
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+}
+.add-cart-btn {
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+}
+.add-cart-btn:hover {
+  background: var(--gold);
+  color: var(--black);
+  box-shadow: var(--shadow);
+}
+.buy-now-btn {
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+.buy-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+}
+
+/* =======================
+   Popup
+======================= */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 14, 14, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+.popup-box {
+  background: #141414;
+  padding: 30px 45px;
+  border-radius: 12px;
+  border: 1px solid var(--gold);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.popup-box p {
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.popup-box button {
+  margin: 10px;
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+.popup-box button:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow);
+}
+
+/* =======================
+   Reviews Section
+======================= */
+.reviews-section {
+  margin-top: 70px;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  padding-top: 50px;
+}
+
+.reviews-title {
+  font-size: 1.9rem;
+  color: var(--gold);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* Add Review Form */
+.add-review {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.add-review input,
+.add-review textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 6px;
+  padding: 10px;
+  color: var(--white);
+  font-family: inherit;
+  margin-bottom: 15px;
+  transition: var(--transition);
+}
+.add-review input:focus,
+.add-review textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  outline: none;
+}
+
+.add-review button {
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.add-review button:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow);
+}
+
+/* Preview Images */
+.preview-images {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+.preview-thumb {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--gold);
+  transition: var(--transition);
+}
+.preview-thumb:hover {
+  transform: scale(1.05);
+}
+
+/* Review Card */
+.review-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 10px;
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  transition: var(--transition);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.05);
+}
+.review-card:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  object-fit: cover;
+}
+.review-name {
+  font-weight: 600;
+  color: var(--white);
+}
+
+.review-date {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+  margin-top: 5px;
+}
+.star {
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+.review-content {
+  margin-top: 10px;
+  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Review Images */
+.review-images {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.review-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 900px) {
+  .product-detail-page {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+  }
+  .image-section {
+    flex-direction: column;
+  }
+  .thumb-column {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .main-image-box {
+    width: 100%;
+    height: auto;
+  }
+  .info-section {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+/* 🖼 Preview thumbnails container */
+.preview-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.preview-thumb-box {
+  position: relative;
+  display: inline-block;
+}
+
+.preview-thumb {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid #ffd700; /* gold accent */
+  transition: transform 0.2s ease;
+}
+
+.preview-thumb:hover {
+  transform: scale(1.05);
+}
+
+/* ❌ Remove image button */
+.remove-img-btn {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 20px;
+  transition: background 0.2s;
+}
+
+.remove-img-btn:hover {
+  background: rgba(255, 0, 0, 0.8);
+}
+
+/* 👁️ Fullscreen image view */
+.image-view-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  cursor: zoom-out;
+}
+
+.image-view-large {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}

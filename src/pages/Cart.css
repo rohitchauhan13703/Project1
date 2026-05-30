@@ -1,0 +1,377 @@
+/* ======================
+   THEME VARIABLES
+====================== */
+:root {
+  --gold: #ffd700;
+  --black: #0e0e0e;
+  --white: #ffffff;
+  --gray: #cccccc;
+  --error: #ff4d4d;
+  --shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  --transition: all 0.3s ease;
+}
+
+/* ======================
+   BASE PAGE
+====================== */
+.cart-page {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+}
+
+.cart-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--gold);
+  margin-bottom: 45px;
+}
+
+/* ======================
+   CART LIST
+====================== */
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px; /* 🔥 FIX */
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 18px 22px;
+  transition: var(--transition);
+
+  overflow: visible; /* 🔥 FIX */
+}
+
+.cart-item:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow);
+}
+
+/* ======================
+   IMAGE
+====================== */
+.cart-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid var(--gold);
+}
+
+/* ======================
+   INFO
+====================== */
+.cart-info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.cart-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.cart-info p {
+  color: var(--gray);
+  margin: 6px 0;
+}
+
+/* ======================
+   QTY
+====================== */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.qty-btn:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+/* ======================
+   ACTIONS (🔥 FIXED)
+====================== */
+.item-actions {
+  min-width: 130px; /* 🔥 IMPORTANT */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.item-total {
+  font-weight: bold;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+/* 🔥 REMOVE BUTTON FIX */
+.remove-btn {
+  background: transparent;
+  border: 1px solid var(--error);
+  color: var(--error);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  display: inline-block;  /* 🔥 FIX */
+  margin-top: 5px;
+}
+
+.remove-btn:hover {
+  background: var(--error);
+  color: var(--white);
+}
+
+/* ======================
+   ADDRESS
+====================== */
+.address-box {
+  margin-top: 50px;
+  padding: 35px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.address-box h2 {
+  text-align: center;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.address-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.address-form input {
+  padding: 10px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid #555;
+  color: var(--white);
+}
+
+.checkout-btn {
+  background: var(--gold);
+  color: black;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* ======================
+   EMPTY CART
+====================== */
+.empty-cart {
+  text-align: center;
+}
+
+.go-shop-btn {
+  background: var(--gold);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ======================
+   PAYMENT
+====================== */
+.payment-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-box {
+  background: black;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.payment-box button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.cancel-btn {
+  background: red;
+}
+/* =========================
+   CART ITEM
+========================= */
+
+.cart-item{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  background: #111;
+  border: 1px solid #222;
+
+  padding: 25px;
+  margin-bottom: 20px;
+
+  border-radius: 18px;
+}
+
+
+/* =========================
+   REMOVE BUTTON
+========================= */
+
+.remove-btn{
+  position: absolute;
+
+  top: 8px;
+  right: 18px;
+
+  background: transparent;
+  border: none;
+
+  color: #1ea7ff;
+
+  font-size: 60px;
+  font-weight: 200;
+
+  cursor: pointer;
+
+  line-height: 1;
+
+  z-index: 100;
+
+  transition: 0.3s ease;
+}
+
+.remove-btn:hover{
+  transform: scale(1.1);
+
+  color: #4fc3ff;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.cart-img{
+  width: 100px;
+  height: 160px;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.cart-info{
+  flex: 1;
+}
+
+.cart-info h3{
+  color: white;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.cart-info p{
+  color: #ccc;
+  margin: 6px 0;
+}
+
+
+/* =========================
+   QTY BUTTONS
+========================= */
+
+.qty-controls{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 15px;
+}
+
+.qty-btn{
+  width: 35px;
+  height: 35px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #1ea7ff;
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.item-total{
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+.cart-item{
+  position: relative;
+}
+
+.remove-btn{
+  position: absolute;
+  top: 0px;
+  right: 12px;
+
+  background: transparent;
+  border: none;
+
+  color: white;
+
+  font-size: 42px;
+
+  cursor: pointer;
+
+  z-index: 9999;
+
+  display: block;
+}

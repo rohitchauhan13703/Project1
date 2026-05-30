@@ -1,0 +1,431 @@
+/* 🔹 Reset + Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff; /* white background */
+  color: #000; /* black text */
+}
+
+/* 🔹 Navbar Base */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #fff; /* white navbar */
+  color: #000;
+  padding: 15px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 🔹 Logo */
+.logo a {
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* 🔹 Desktop Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links li a,
+.dropdown-btn {
+  color: #000;
+  text-decoration: none;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover,
+.dropdown-btn:hover {
+  color: #fff;
+  background: #000;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+/* 🔹 Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-menu a {
+  padding: 8px 15px;
+  color: #000;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* 🔹 Icons */
+.icon {
+  font-size: 1.2rem;
+}
+
+/* 🔹 Hamburger */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #000;
+}
+
+/* 🔹 Sidebar (Mobile) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 260px;
+  height: 100vh;
+  background-color: #fff;
+  color: #000;
+  transition: left 0.3s ease;
+  z-index: 2000;
+  padding-top: 80px;
+  border-right: 2px solid #000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 30px;
+}
+
+.sidebar ul a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.1rem;
+}
+
+.sidebar ul a:hover {
+  color: #fff;
+  background-color: #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* 🔹 Overlay (for mobile sidebar background) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1500;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 900px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .dropdown-menu {
+    position: static;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 15px;
+  }
+}
+
+
+
+
+
+
+/* 🔹 Overall Page Layout */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #000 50%, #fff 50%);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  transition: all 0.4s ease-in-out;
+}
+
+/* 🔹 Login Container */
+.login-container {
+  background-color: #000;
+  border: 2px solid #fff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.login-container:hover {
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.4);
+}
+
+/* 🔹 Titles */
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.login-subtitle {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+/* 🔹 Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background-color: #000;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+input:focus {
+  border-color: #fff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  outline: none;
+  transform: scale(1.02);
+}
+
+/* 🔹 Error Message */
+.error-message {
+  color: #ff4b4b;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* 🔹 Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+  background: #000;
+  color: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 🔹 Extra Links */
+.extra-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.extra-links a {
+  color: #fff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.extra-links a:hover {
+  color: #000;
+  background-color: #fff;
+  padding: 4px 8px;
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 25px;
+    border-radius: 15px;
+  }
+
+  .login-title {
+    font-size: 1.7rem;
+  }
+
+  .extra-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+/* 🔹 Glow Animation (optional aesthetic effect) */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+}
+
+.login-container:hover {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+
+/* 🔸 Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.logo-img {
+  height: 65px;
+  width: auto;
+  
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.4)); /* subtle gold glow */
+}
+
+/* Hover effect for premium feel */
+.logo-img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.8)); /* gold glow */
+}
+
+/* Responsive logo size for phones */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    height: 38px;
+  }
+}
+
+
+/* 🔹 Sidebar Close Button */
+.sidebar-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  z-index: 2100;
+}
+
+.sidebar-close-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
